@@ -17,13 +17,30 @@
 
 
 ////////////// Task 3 ///////////////////
-function checkVowel(sentence){
-    let reg = /["a", "e", "i", "o", "u"]/gi;
-    let test = sentence.match(reg);
-    let char = test.length;
-    return char;
+// function checkVowel(sentence){
+//     let reg = /["a", "e", "i", "o", "u"]/gi;
+//     let test = sentence.match(reg);
+//     let char = test.length;
+//     return char;
+// }
+
+// const a = "The quick fox jump over the lazy dog."
+// const result = checkVowel(a);
+// console.log("Number of the vowel is: ", result);
+
+////////////////// Task 4 //////////////////
+function findTheLongest(str){
+    let array1 = str.match(/\w[a-z]{0,}/gi);
+    var resultlong = array1[0];
+
+    for(var x =1; x < array1.length; x++){
+        if(resultlong.length < array1[x].length){
+            resultlong = array1[x];
+        }
+    }
+    return resultlong;
 }
 
-const a = "The quick fox jump over the lazy dog."
-const result = checkVowel(a);
-console.log("Number of the vowel is: ", result);
+const words = "I am learning Programming to become a programmer";
+const result = findTheLongest(words);
+console.log(result);
