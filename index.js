@@ -11,41 +11,32 @@
 // console.log(`${a} degree celsius is equal to ${result} degree farenheit`);
 
 //////////////// Task 2 ////////////////////
-function findRepeatNum (numbers){
-    const countMap = {};
-
-    for (let i = 0; i < numbers.length; i++){
-        const currentNumber = numbers[i];
-
-        if (!countMap[currentNumber]){
-            countMap[currentNumber] = 1;
-        }else{
-            countMap[currentNumber]++;
+function repeatCount(array, find){
+    let count = 0;
+    for(const num of array){
+        if (num === find){
+            count++
         }
     }
-
-    for (const number in countMap){
-        console.log(`${number} is repeated ${countMap[number]}times`);
-    }
+    return `find: ${find}, count: ${count} `
 }
 
-const numB = [5,6,11,12,98, 5];
-
-const result = findRepeatNum(numB);
-console.log(result);
-
+const numbers = [5, 6, 11, 12, 98, 5];
+const find = 5;
+const count = repeatCount(numbers, find)
+console.log(count);
 
 ////////////// Task 3 ///////////////////
-// function checkVowel(sentence){
-//     let reg = /["a", "e", "i", "o", "u"]/gi;
-//     let test = sentence.match(reg);
-//     let char = test.length;
-//     return char;
-// }
+function checkVowel(sentence){
+    let reg = /["a", "e", "i", "o", "u"]/gi;
+    let test = sentence.match(reg);
+    let char = test.length;
+    return char;
+}
 
-// const a = "The quick fox jump over the lazy dog."
-// const result = checkVowel(a);
-// console.log("Number of the vowel is: ", result);
+const a = "The quick fox jump over the lazy dog."
+const result = checkVowel(a);
+console.log("Number of the vowel is: ", result);
 
 ////////////////// Task 4 //////////////////
 // function findTheLongest(str){
